@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 @NamedQuery(name = "player_getAllCount", query = "select count(p) from Player  p")
 public class Player {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Long id;
 
@@ -19,12 +19,12 @@ public class Player {
     @Column(length = 30, nullable = false)
     private String title;
 
-    @Enumerated(EnumType.ORDINAL)
     @Column(nullable = false)
+    @Enumerated(EnumType.ORDINAL)
     private Race race;
 
-    @Enumerated(EnumType.ORDINAL)
     @Column(nullable = false)
+    @Enumerated(EnumType.ORDINAL)
     private Profession profession;
 
     @Column(nullable = false)
